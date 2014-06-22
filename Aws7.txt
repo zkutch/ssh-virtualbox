@@ -1,0 +1,364 @@
+Aws7  2 hours ago 
+hi
+
+zkutch  51 minutes ago 
+Hi
+
+Aws7  50 minutes ago 
+how r you
+
+zkutch  50 minutes ago 
+thanks, fine.
+and you?
+
+Aws7  45 minutes ago 
+i'm good
+
+Aws7  45 minutes ago 
+so are you gonna do the work
+
+Aws7  45 minutes ago 
+also , take your time for it
+
+Aws7  45 minutes ago 
+but i need it professional
+
+Aws7  44 minutes ago 
+i want to give me something legend
+
+Aws7  44 minutes ago 
+are you gonna able to do the work , also i might add some of options
+
+zkutch  44 minutes ago 
+new options?
+
+Aws7  44 minutes ago 
+yes
+
+zkutch  43 minutes ago 
+write, pls.
+
+Aws7  43 minutes ago 
+i want the script to be fully controlling the virtalbox with all the virtualbox features
+
+Aws7  42 minutes ago 
+start
+
+Aws7  42 minutes ago 
+pause
+
+Aws7  42 minutes ago 
+delete
+
+Aws7  42 minutes ago 
+clone
+
+Aws7  42 minutes ago 
+all the features in the virtualbox i can control it from the bash script
+
+zkutch  41 minutes ago 
+using command line options?
+
+Aws7  41 minutes ago 
+yes
+
+Aws7  40 minutes ago 
+make it like choosing options
+
+Aws7  40 minutes ago 
+1- bla bla
+
+Aws7  40 minutes ago 
+2- bla bla
+
+Aws7  40 minutes ago 
+choose : 2
+
+Aws7  40 minutes ago 
+like that
+
+zkutch  40 minutes ago 
+understand. 
+
+Aws7  40 minutes ago 
+done
+
+Aws7  40 minutes ago 
+i'll hire you now
+
+Aws7  40 minutes ago 
+good?
+
+zkutch  39 minutes ago 
+yes, but additional options is new price and different time.
+
+Aws7  39 minutes ago 
+no problem
+
+Aws7  39 minutes ago 
+also
+
+Aws7  39 minutes ago 
+i want if i run the os image
+
+Aws7  39 minutes ago 
+like if i run win xp
+
+Aws7  38 minutes ago 
+or any os
+
+Aws7  38 minutes ago 
+any changes happend to it , it will recorded to a log file
+
+zkutch  38 minutes ago 
+which kind of changes?
+
+Aws7  37 minutes ago 
+like the space before it run
+
+Aws7  37 minutes ago 
+and then after 
+
+Aws7  37 minutes ago 
+the data that added to it
+
+Aws7  37 minutes ago 
+like that
+
+Aws7  37 minutes ago 
+possible? 
+
+zkutch  36 minutes ago 
+ space easy. Data added, pls, explain
+
+Aws7  36 minutes ago 
+like the difference before and after
+
+Aws7  35 minutes ago 
+also creating new image
+
+zkutch  35 minutes ago 
+hm... suppose you have 80gb before and 90gb after - what difference you want to see?
+
+Aws7  34 minutes ago 
+10 gb
+
+Aws7  34 minutes ago 
+10 gb is added on ( time + date )
+
+zkutch  33 minutes ago 
+to show size, time is easy, but if you want to see diff which equals 10gb it hangs almost all comps.
+
+Aws7  33 minutes ago 
+ok skip this one
+
+Aws7  33 minutes ago 
+put also creating a new image
+
+Aws7  32 minutes ago 
+if you download VirtualBox
+
+Aws7  32 minutes ago 
+click on New
+
+Aws7  32 minutes ago 
+and see how it's works
+
+zkutch  32 minutes ago 
+so we need all options you would like written for clearness - correct?
+
+Aws7  32 minutes ago 
+bring all of that to make it to be controlled from the bash 
+
+Aws7  31 minutes ago 
+yes
+
+Aws7  31 minutes ago 
+also very important
+
+Aws7  31 minutes ago 
+ssh
+
+Aws7  31 minutes ago 
+the script wont work unless the user connected through the ssh
+
+Aws7  30 minutes ago 
+if not the program will exit
+
+Aws7  30 minutes ago 
+because the VirtualBox is on the cluster node 
+
+Aws7  30 minutes ago 
+and the user will use the pc to connect to the cluster node
+
+Aws7  30 minutes ago 
+$username@$server
+
+Aws7  29 minutes ago 
+ssh $username@$server
+
+Aws7  29 minutes ago 
+?
+
+Aws7  29 minutes ago 
+good?
+
+zkutch  28 minutes ago 
+I think good, but is it all?
+
+Aws7  28 minutes ago 
+i guess so
+
+zkutch  27 minutes ago 
+and what price you suggest?
+
+Aws7  27 minutes ago 
+tell me
+
+zkutch  27 minutes ago 
+one moment, look over..
+
+Aws7  27 minutes ago 
+ok
+
+zkutch  25 minutes ago 
+$100 + 3day
+
+Aws7  25 minutes ago 
+80 2 days
+
+Aws7  24 minutes ago 
+$80
+
+Aws7  24 minutes ago 
+and i want it on 12 pm sunday
+
+zkutch  23 minutes ago 
+if you insist on sunday, then increase price is fair - no?
+
+Aws7  23 minutes ago 
+how about $80 and the deadline will be on 7 AM monday
+
+Aws7  22 minutes ago 
+good?
+
+Aws7  22 minutes ago 
+deal?
+
+zkutch  21 minutes ago 
+which time you have now?
+
+Aws7  21 minutes ago 
+now it's 7 pm
+
+Aws7  21 minutes ago 
+Friday 7 pm
+
+zkutch  20 minutes ago 
+let's put deadline monday this time.
+
+Aws7  19 minutes ago 
+no i can't
+
+Aws7  19 minutes ago 
+must be on 7 am monday
+
+Aws7  19 minutes ago 
+if i can i'll let you for sure
+
+zkutch  17 minutes ago 
+ok, to give me $80 you should put $88, because %10 take this site from me - are you agree?
+
+Aws7  16 minutes ago 
+ok
+
+Aws7  16 minutes ago 
+edit ur bid
+
+zkutch  16 minutes ago 
+do you prefer perl script - for you it will be same command line tool, but more fast and secure?
+
+Aws7  15 minutes ago 
+no i want it bash
+
+Aws7  15 minutes ago 
+i'll use Centos 
+
+zkutch  15 minutes ago 
+ok, no problem, one moment - editing..
+
+Aws7  14 minutes ago 
+ok
+
+zkutch  13 minutes ago 
+sorry it wrote 97 itself - correcting...
+
+zkutch  13 minutes ago 
+done
+
+Aws7  12 minutes ago 
+i put 88
+
+Aws7  12 minutes ago 
+u asked 66
+
+Aws7  12 minutes ago 
+wrong
+
+Aws7  12 minutes ago 
+done?
+
+zkutch  11 minutes ago 
+it refreshing and refreshing ...
+
+Aws7  11 minutes ago 
+ok
+
+Aws7  11 minutes ago 
+Amount Description Status Actions
+$88.00 Initial milestone payment (USD)
+
+Aws7  11 minutes ago 
+good?
+
+zkutch  11 minutes ago 
+accepted. Something more?
+
+Aws7  10 minutes ago 
+please put note for describe each line
+
+Aws7  10 minutes ago 
+and make it really good
+
+zkutch  10 minutes ago 
+you mean comments?
+
+Aws7  9 minutes ago 
+yes
+
+zkutch  7 minutes ago 
+comments used on key places, not each line. I'll write in detail
+
+Aws7  6 minutes ago 
+ok
+
+zkutch  6 minutes ago 
+for any case, my mail is with same name as here on yahoo.
+
+Aws7  5 minutes ago 
+ok
+
+Aws7  5 minutes ago 
+zkutch@yahoo.com?
+
+zkutch  4 minutes ago 
+exactly, this site forbid exchange contacts as I know.
+
+Aws7  4 minutes ago 
+ok
+
+zkutch  2 minutes ago 
+I am rarely on this chat, but if you leave message it come to my mail, or write directly and I'll respond.
+
+Aws7  1 minute ago 
+ok
