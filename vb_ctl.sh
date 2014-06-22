@@ -20,7 +20,7 @@ do
 	  key7=${my_options[$i+1]}
 	  if [[ "$key7" =~ ^.*@.*$ ]]
 	  then
-	      kommand="ssh $key7"
+	      kommand="ssh -T $key7"
 	  else
 	       echo After -R option should be remote_user@remote_host
 	       echo
@@ -95,10 +95,15 @@ do
 			exit 2;
 		    fi  
 		fi	   
-	  else
-	      ssh -A -T "$key7" << eof
-	      raod1=`VBoxManage list vms | wc -l`
-	      echo raod aris $raod1
+	  else	       
+	      
+	      kom2='raod1=`VBoxManage list vms | wc -l` | echo raod aris $raod1'
+	      kom3=' echo raod aris $raod1'
+	      #eval "$kommand $kom2"
+	     # eval "$kommand $kom3"
+	     ssh -T "$key7" << eof
+	     raod1=`VBoxManage list vms | wc -l`
+	     echo "raod aris  \$raod1"
 		    if [[ "$raod1" -eq 0 ]]
 		      then
 			echo "You have not virtual machines to start."
