@@ -256,6 +256,36 @@ eof
 		fi  
 	    fi	   
       ;;
+       -i|--info)
+	  raod7=`VBoxManage list vms | wc -l`
+	  if [ $raod7 -eq 0 ]
+	    then
+	      echo "You have not virtual machines."
+	      echo	    
+	    else
+		key7=${my_options[$i+1]}
+		if [[ "$key7" =~ ^[1-9]+[0-9]?$ ]] #2>/dev/null	  
+		then
+		    if [[ "$key7" -gt "$raod7" ]]
+		    then
+			echo "Chosed virtual machine number $key7 is more then existing virtual machines amount $raod7. Exit."
+			echo
+			exit 3
+		    else
+			echo Try to find number $key7 virtual machine from list.
+			VBoxManage list vms | nl
+			num=`VBoxManage list vms | sed -n "$key7"p | awk -F '"' '{print $2}' | sed 's/"//g'`
+			echo showing info for "$num" ..
+			VBoxManage showvminfo "$num"
+			echo		  
+		    fi		  
+		else
+		    echo After -i option should be number of virtual machine
+		    echo
+		    exit 2;
+		fi  
+	    fi	   
+      ;;
       -h|--help)
 	  echo
 	  echo "	vb_ctl.sh little script to manage VirtualBox machines locally and remotely."
@@ -267,7 +297,7 @@ eof
 	  echo "	 -s|--stop."
 	  echo "	 -b|--begin."
 	  echo "	 -l|--list."	  
-	  echo "	 -R|--Remote."
+	  echo "	 -i|--info."
 	  echo	  
       ;;
      
@@ -281,45 +311,4 @@ exit 0
 echo
 
 
-
-
-
-
-
-
-# while [[ $# > 1 ]]
-# do
-# key="$1"
-# shift
-# 
-# case $key in
-#     -e|--extension)
-#     EXTENSION="$1"
-#     shift
-#     ;;
-#     -s|--searchpath)
-#     SEARCHPATH="$1"
-#     shift
-#     ;;
-#     -l|--lib)
-#     LIBPATH="$1"
-#     shift
-#     ;;
-#     --default)
-#     DEFAULT=YES
-#     shift
-#     ;;
-#     *)
-#             # unknown option
-#     ;;
-# esac
-# done
-# echo FILE EXTENSION  = "${EXTENSION}"
-# echo SEARCH PATH     = "${SEARCHPATH}"
-# echo LIBRARY PATH    = "${LIBPATH}"
-# echo "Number files in SEARCH PATH with EXTENSION:" $(ls -1 "${SEARCHPATH}"/*."${EXTENSION}" | wc -l)
-# if [[ -n $1 ]]; then
-#     echo "Last line of file specified as non-opt/last argument:"
-#     tail -1 $1
-# fi
 
