@@ -17,10 +17,10 @@ do
    
    case $key in
        -R|--Remote)
-	  key7=${my_options[$i+1]}
-	  if [[ "$key7" =~ ^.*@.*$ ]]
+	  key8=${my_options[$i+1]}
+	  if [[ "$key8" =~ ^.*@.*$ ]]
 	  then
-	      kommand="ssh -T $key7"
+	      kommand="ssh $key8"
 	  else
 	       echo After -R option should be remote_user@remote_host
 	       echo
@@ -51,7 +51,7 @@ do
 		      exit 3
 		   else
 		      echo Try to stop number $key1 virtual machine from list.
-		      VBoxManage list runningvms
+		      VBoxManage list runningvms | nl
 		      num=`VBoxManage list runningvms | sed -n "$key1"p | awk -F '"' '{print $2}' | sed 's/"//g'`
 		      echo stopping "$num" ..
 		      VBoxManage controlvm "$num" savestate
@@ -64,9 +64,7 @@ do
 	      fi  
 	  fi	      
       ;;
-      -b|--begin)
-	  if [[  "$kommand" == "" ]]  
-	  then
+      -b|--begin)	  
 	      raod1=`VBoxManage list vms | wc -l`
 	      if [ $raod1 -eq 0 ]
 		then
@@ -94,45 +92,7 @@ do
 			echo
 			exit 2;
 		    fi  
-		fi	   
-	  else	       
-	      
-	      kom2='raod1=`VBoxManage list vms | wc -l` | echo raod aris $raod1'
-	      kom3=' echo raod aris $raod1'
-	      #eval "$kommand $kom2"
-	     # eval "$kommand $kom3"
-	     ssh -T "$key7" << eof
-	     raod1=`VBoxManage list vms | wc -l`
-	     echo "raod aris  \$raod1"
-		    if [[ "$raod1" -eq 0 ]]
-		      then
-			echo "You have not virtual machines to start."
-			echo	    
-		      else
-			  key2=${my_options[$i+1]}
-			  if [[ "$key2" =~ ^[1-9]+[0-9]?$ ]] #2>/dev/null	  
-			  then
-			      if [[ "$key2" -gt "$raod1" ]]
-			      then
-				  echo "Chosed virtual machine number $key2 is more then existing virtual machines amount $raod1. Exit."
-				  echo
-				  exit 3
-			      else
-				  echo Try to start number $key2 virtual machine from list.
-				  VBoxManage list vms | nl
-				  num=`VBoxManage list vms | sed -n "$key2"p | awk -F '"' '{print $2}' | sed 's/"//g'`
-				  echo starting "$num" ..
-				  VBoxManage startvm "$num" 
-				  echo		  
-			      fi		  
-			  else
-			      echo After -b option should be number of virtual machine
-			      echo
-			      exit 2;
-			  fi  
-		      fi
-eof
-	  fi
+		fi	 	 
 	  
       ;;
       -p|--pause)
@@ -257,34 +217,70 @@ eof
 	    fi	   
       ;;
        -i|--info)
-	  raod7=`VBoxManage list vms | wc -l`
-	  if [ $raod7 -eq 0 ]
+	    if [[  "$kommand" == "" ]]  
 	    then
-	      echo "You have not virtual machines."
-	      echo	    
+		    raod7=$(VBoxManage list vms | sed -n "$=")
+		      if [ $raod7 -eq 0 ]
+			then
+			  echo "You have not virtual machines."
+			  echo	    
+			else
+			    key7=${my_options[$i+1]}
+			    if [[ "$key7" =~ ^[1-9]+[0-9]?$ ]] #2>/dev/null	  
+			    then
+				if [[ "$key7" -gt "$raod7" ]]
+				then
+				    echo "Chosed virtual machine number $key7 is more then existing virtual machines amount $raod7. Exit."
+				    echo
+				    exit 3
+				else
+				    echo Try to find number $key7 virtual machine from list.
+				    VBoxManage list vms | nl
+				    num=`VBoxManage list vms | sed -n "$key7"p | awk -F '"' '{print $2}' | sed 's/"//g'`
+				    echo showing info for "$num" ..
+				    VBoxManage showvminfo "$num"
+				    echo		  
+				fi		  
+			    else
+				echo After -i option should be number of virtual machine
+				echo
+				exit 2;
+			    fi  
+			fi	   
 	    else
-		key7=${my_options[$i+1]}
-		if [[ "$key7" =~ ^[1-9]+[0-9]?$ ]] #2>/dev/null	  
-		then
-		    if [[ "$key7" -gt "$raod7" ]]
-		    then
-			echo "Chosed virtual machine number $key7 is more then existing virtual machines amount $raod7. Exit."
-			echo
-			exit 3
-		    else
-			echo Try to find number $key7 virtual machine from list.
-			VBoxManage list vms | nl
-			num=`VBoxManage list vms | sed -n "$key7"p | awk -F '"' '{print $2}' | sed 's/"//g'`
-			echo showing info for "$num" ..
-			VBoxManage showvminfo "$num"
-			echo		  
-		    fi		  
-		else
-		    echo After -i option should be number of virtual machine
-		    echo
-		    exit 2;
-		fi  
-	    fi	   
+		      kom2=\''raod8=$(VBoxManage list vms |  wc -l); echo "$raod8"'\'
+		      raod10=$(eval "$kommand  $kom2")
+		      if [ $raod10 -eq 0 ]
+			then
+			  echo "You have not virtual machines."
+			  echo	    
+			else
+			    key7=${my_options[$i+1]}
+			    if [[ "$key7" =~ ^[1-9]+[0-9]?$ ]] #2>/dev/null	  
+			    then
+				if [[ "$key7" -gt "$raod10" ]]
+				then
+				    echo "Chosed virtual machine number $key7 is more then existing virtual machines amount $raod10. Exit."
+				    echo
+				    exit 3
+				else
+				    echo Try to find number $key7 virtual machine from list.
+				    kom3='VBoxManage list vms | nl'
+				    eval "$kommand $kom3"
+				    num=$( eval "$kommand $kom3" | sed -n "$key7"p | awk -F '"' '{print $2}' )
+				    echo showing info for "$num" ..
+				    kom4='VBoxManage showvminfo "$num"'
+				    eval "$kommand $kom4" 				    
+				    echo		  
+				fi		  
+			    else
+				echo After -i option should be number of virtual machine
+				echo
+				exit 2;
+			    fi  
+			fi	   
+	    fi
+	 
       ;;
       -h|--help)
 	  echo
@@ -298,6 +294,7 @@ eof
 	  echo "	 -b|--begin."
 	  echo "	 -l|--list."	  
 	  echo "	 -i|--info."
+	  echo "	 -R|--Remote."
 	  echo	  
       ;;
      
@@ -310,5 +307,7 @@ done
 exit 0
 echo
 
-
-
+# 		      echo "$kommand  $kom2"
+#  		      raod9=$(ssh -T -A -q zura@192.168.133.2  'raod8=$(VBoxManage list vms |  wc -l); echo "$raod8"') 
+# 		      echo raod9 aris $raod9
+# 		      echo raod10 aris $raod10
