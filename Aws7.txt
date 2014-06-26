@@ -362,3 +362,105 @@ I am rarely on this chat, but if you leave message it come to my mail, or write 
 
 Aws7  1 minute ago 
 ok
+
+
+
+
+Aws7  2 days ago 
+hi
+
+Aws7  2 days ago 
+how's the work going?
+
+Aws7  2 days ago 
+would you provide me a pictures with the work
+
+zkutch  2 days ago 
+Hi, which pictures?
+
+Aws7  2 days ago 
+of the bash
+
+Aws7  2 days ago 
+it u did start on it
+
+zkutch  2 days ago 
+exactly just now I am working
+
+Aws7  2 days ago 
+ok
+
+zkutch  2 days ago 
+if, you have not more questions, I'll leave this chat. I enter only for you. ok?
+
+Aws7  2 days ago 
+ok
+
+zkutch  2 days ago 
+Write on mail, if at you arise something suddenly.
+
+zkutch  Yesterday 
+Hi. Are you here?
+
+zkutch  Yesterday 
+?
+
+zkutch  Yesterday 
+script is ready working locally. The most easy way to execute it through ssh is to copy it to remote comp and execute
+ssh remote_user@remote_comp ./path_to_script
+waiting your answer..
+
+zkutch  Yesterday 
+No answer from you - when finished your time? Anyway I attach script and waiting again.
+ vb_ctl.sh Download 
+
+zkutch  Yesterday 
+Had added new option - info - you still are not on connection: I think this automatically changes deadline.
+ vb_ctl.sh Download 
+
+zkutch  23 hours ago 
+I cannot be here all night, at me now 2.40am deep night. I'll wait you tomorrow to close project. Thanks.
+
+Aws7  20 hours ago 
+Hi, if u mean that I have to copy the script bash to the node cluster, the answer is no, because I want to use it my pc to get ssh access to the cluster node to run the virtualbox and do all the options that I gave you.
+
+Aws7  17 hours ago 
+i saw the bash script , but there is no ssh connection feature ! , I don't want to store this script in the cluster node , I want it in my pc and do all the commends that you wrote after login through ssh , so I want ssh login feature on it , and this is the point
+
+zkutch  5 hours ago 
+I understand your position and if somewhere in future you will want and I'll have time we can discuss why your way is worse and solution suggested by me is best.
+
+But now I followed your order and prepared script also for working with ssh. 
+Before I provide it let me set question:
+You yourself put very hard deadline and then in last day had disappeared. I waited you almost 18 hours with ready solution (it is best, see 1-st paragraph) and without your answer.
+you ruined not only your deadline, but also lost my time when I was ready to finish project accordingly your wishes and waited you. I am forced to work also on monday and this takes my monday time, which I not planned so. Question:
+What do you think about?
+
+
+Aws7  49 minutes ago 
+ok i release the money and i gave you a good feedback , but i was thinking if u can put some lines to connect to ssh and after login ssh do the script without put the script into the cluster
+
+zkutch  1 minute ago 
+Thanks for understanding. I suggest to open new project and there I'll make ssh - ok?
+
+why new project?
+
+Aws7  8 minutes ago 
+in the project description i wrote " 1- Connecting to the cluster node by type the username and the host . ex: $username@$clusterhost"
+×
+
+Aws7  8 minutes ago 
+and you didn't do that sir
+
+
+You are right and I agree with you. From one hand. Excuse me for repeating, but if we did not lost time at sunday, then everything will finished for now.
+
+Let's look from another hand: As time was lost on sunday, then I need to arrange my time tomorrow for this task. My time is my money,
+is it so?
+
+Additionally new project, if successfully finished, will increase both reputation yours and mine. Job remained for implement ssh in all options is not less, then already done, but if/when we come to agreement I'll finish it in one day - tomorrow. 
+
+So benefits from new project for both are clear.
+
+What do you think about?
+
