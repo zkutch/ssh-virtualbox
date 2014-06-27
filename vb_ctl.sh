@@ -82,6 +82,15 @@ remote_vm()
 			  fi
 
 }
+do_option()
+{
+     if [[  "$kommand" == "" ]]  
+       then
+		  local_vm $1 $2 $3 $4 $5 $6
+       else
+		remote_vm $1 $2 $3 $4 $5 $6
+       fi      
+}
 
 echo
 if [ $# -eq 0 ]
@@ -129,60 +138,31 @@ do
 	  echo
       ;;
       -s|--stop)
-	   if [[  "$kommand" == "" ]]  
-	   then
-		    local_vm "runningvms" "stop" "running" "-s" "controlvm" "savestate"
-	   else
-		    remote_vm "runningvms" "stop" "running" "-s" "controlvm" "savestate"    
-	   fi	        
+      do_option "runningvms" "stop" "running" "-s" "controlvm" "savestate"        
       ;;
       -b|--begin)
-	    if [[  "$kommand" == "" ]]  
-	    then
-		      local_vm "vms" "start" "existing" "-b" "startvm" ""
-	    else
-		      remote_vm "vms" "start" "existing" "-b" "startvm" ""		  
-	    fi	  
+      do_option "vms" "start" "existing" "-b" "startvm" ""
       ;;
       -p|--pause)
-       if [[  "$kommand" == "" ]]  
-       then
-		  local_vm "runningvms" "pause" "running" "-p" "controlvm" "pause"
-       else
-		remote_vm "runningvms" "pause" "running" "-p" "controlvm" "pause"
-       fi      
+      do_option "runningvms" "pause" "running" "-p" "controlvm" "pause"      
       ;;
-      -r|--resume)
-      if [[  "$kommand" == "" ]]  
-      then
-		  local_vm "runningvms" "resume" "running" "-r" "controlvm" "resume"
-      else
-		  remote_vm "runningvms" "resume" "running" "-r" "controlvm" "resume"
-      fi	  
+      -t|--turn)
+      do_option "runningvms" "reset" "running" "-t" "controlvm" "reset"      
+      ;;
+      -P|--Poweroff)
+      do_option "runningvms" "poweroff" "running" "-P" "controlvm" "poweroff"      
+      ;;
+      -r|--resume)      
+      do_option "runningvms" "resume" "running" "-r" "controlvm" "resume"        
       ;;
       -c|--clone)
-      if [[  "$kommand" == "" ]]  
-      then
-			    local_vm "vms" "clone" "existing" "-c" "clonevm" "--register"
-      else
-			   remote_vm  "vms" "clone" "existing" "-c" "clonevm" "--register"
-      fi	   
+      do_option "vms" "clone" "existing" "-c" "clonevm" "--register"         
       ;;
       -d|--delete)
-       if [[  "$kommand" == "" ]]  
-       then
-			  local_vm "vms" "delete" "existing" "-d" "unregistervm" "--delete"
-       else
-			  remote_vm "vms" "delete" "existing" "-d" "unregistervm" "--delete"
-       fi	    
+      do_option "vms" "delete" "existing" "-d" "unregistervm" "--delete"          
       ;;
-      -i|--info)	    
-	    if [[  "$kommand" == "" ]]  
-	    then
-		    local_vm "vms" "find info about" "existing" "-i" "showvminfo" ""
-	    else
-		    remote_vm "vms" "find info about" "existing" "-i" "showvminfo" ""		        
-	    fi	 
+      -i|--info)
+      do_option "vms" "find info about" "existing" "-i" "showvminfo" ""	   
       ;;
       -h|--help)
 	  echo
@@ -193,6 +173,8 @@ do
 	  echo "	 -r|--resume. Resume specific virtual machine, after -r must number of vm from running virtual machines list."
 	  echo "	 -p|--pause. Pause specific virtual machine, after -p must number of vm from running virtual machines list."
 	  echo "	 -s|--stop. Stops=savestate  specific virtual machine, after -s must number of vm from running virtual machines list."
+	  echo "	 -P|--Poweroff. Stops=poweroff  specific virtual machine, after -P must number of vm from running virtual machines list."
+	  echo "	 -t|--turn. Stops=reset  specific virtual machine, after -t must number of vm from running virtual machines list."
 	  echo "	 -b|--begin. Begins specific virtual machine, after -b must number of vm from existing virtual machines list."
 	  echo "	 -l|--list. List all existing virtual machines."	  
 	  echo "	 -i|--info. Shows info about specific virtual machine, after -i must number of vm from existing virtual machines list."
