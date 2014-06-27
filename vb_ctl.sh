@@ -1,5 +1,25 @@
 #/bin/bash!
 #
+# Copyright 2014  zkutch@yahoo.com
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation; either version 2.1 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#
+# This is little script to manage VirtualBox machines locally and remotely
+# For remote use (option -R)  best is to have public key authentication  with remote host. 
+# 
+#
 
 local_vm() 
 # running_type=runningvms|vms action_name=stop|.. vm_type=running|.. option_name=-s|.. operator_before=controlvm|.. operator_after=savestate|
@@ -166,27 +186,28 @@ do
       ;;
       -h|--help)
 	  echo
-	  echo "	vb_ctl.sh little script to manage VirtualBox machines locally and remotely."
+	  echo "	vb_ctl.sh is little script to manage VirtualBox machines locally and remotely."
+	  echo "	For remote use (option -R)  best is to have public key authentication  with remote host."
 	  echo "	Following options are supported:"
+	  echo "	 -b|--begin. Begins specific virtual machine, after -b must number of vm from existing virtual machines list."
 	  echo "	 -d|--delete. Delete specific virtual machine, after -d must number of vm from existing virtual machines list."
 	  echo "	 -c|--clone. Clone (and --register) specific virtual machine, after -c must number of vm from existing virtual machines list. "
 	  echo "	 -r|--resume. Resume specific virtual machine, after -r must number of vm from running virtual machines list."
 	  echo "	 -p|--pause. Pause specific virtual machine, after -p must number of vm from running virtual machines list."
 	  echo "	 -s|--stop. Stops=savestate  specific virtual machine, after -s must number of vm from running virtual machines list."
 	  echo "	 -P|--Poweroff. Stops=poweroff  specific virtual machine, after -P must number of vm from running virtual machines list."
-	  echo "	 -t|--turn. Stops=reset  specific virtual machine, after -t must number of vm from running virtual machines list."
-	  echo "	 -b|--begin. Begins specific virtual machine, after -b must number of vm from existing virtual machines list."
+	  echo "	 -t|--turn. Stops=reset  specific virtual machine, after -t must number of vm from running virtual machines list."	  
 	  echo "	 -l|--list. List all existing virtual machines."	  
+	  echo "	 -L|--List. List all currently running virtual machines."	  
 	  echo "	 -i|--info. Shows info about specific virtual machine, after -i must number of vm from existing virtual machines list."
 	  echo "	 -R|--Remote. Script works on remote host, after -R must be remote_user@remote_host, all options after -R applied remotely."
 	  echo "	 -X|--Xwindow. Turns on -X option for ssh, must be before option -R."
-	  echo "	 -L|--List. List all currently running virtual machines."	  
+	  echo "	 Exit codes: 0 success, 1 no recognizable options, 2 mistake after option, 3 wrong virtual machine number, 4 wrong remote host."
 	  echo	  
       ;;
      
    esac
 done
-
 
 
 
