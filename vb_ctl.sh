@@ -182,7 +182,7 @@ do
       do_option "vms" "delete" "existing" "-d" "unregistervm" "--delete"          
       ;;
       -i|--info)
-      do_option "vms" "find info about" "existing" "-i" "showvminfo" ""	   
+      do_option "vms" "find info about" "showvminfo"	   
       ;;
       -h|--help)
 	  echo
